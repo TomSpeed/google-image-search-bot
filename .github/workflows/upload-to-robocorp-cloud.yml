@@ -21,7 +21,7 @@ jobs:
       - name: Run Robocorp Cloud Process
         uses: robocorp/action-trigger-process@v1.0.0
         with:
-          api-key: ${{ secrets.ROBOCORP_PROCESS_KEY }}
+          api-key: ${{ secrets.ROBOCORP_WORKSPACE_KEY }}
           workspace-id: ${{ secrets.ROBOCORP_WORKSPACE_ID }}
           process-id: ${{ secrets.ROBOCORP_PROCESS_ID }}
           await-complete: true
