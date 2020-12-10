@@ -1,0 +1,20 @@
+name: Upload to Robocorp Cloud
+
+on: [push]
+
+jobs:
+  upload-to-robocorp-cloud:
+    runs-on: ubuntu-latest
+    name: Upload to Robocorp Cloud
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Upload Robot to Robocorp Cloud
+        uses: robocorp/action-upload-robot@v1.0.0
+        with:
+          workspace-key: ${{ secrets.ROBOCORP_WORKSPACE_KEY }}
+          workspace-id: ${{ secrets.ROBOCORP_WORKSPACE_ID }}
+          robot-id: '3999'
